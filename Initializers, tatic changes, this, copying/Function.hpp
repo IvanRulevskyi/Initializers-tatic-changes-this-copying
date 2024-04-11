@@ -1,13 +1,37 @@
-//
-//  Function.hpp
-//  Initializers, tatic changes, this, copying
-//
-//  Created by Иван Рулевский on 11.04.2024.
-//
+#include <iostream>
+#include <vector>
+#include <string>
+using namespace std;
 
-#ifndef Function_hpp
-#define Function_hpp
+class Person
+{
+private:
+    string name;
+public:
+    Person(string name):
+    name (name){}
+    string getName() const;
+};
 
-#include <stdio.h>
+class Apartament
+{
+private:
+    vector<Person>resident;
+    static int totalResidents;
+    
+public:
+    void addResident(Person person);
+    void prinrPerson();
+    int getTotalResidents();
+};
 
-#endif /* Function_hpp */
+class House
+{
+private:
+    vector<Apartament> apartaments;
+    static int totalApartments;
+public:
+    void addApartament(Apartament apartament);
+    void printApartments();
+    int getTotalApartments();
+};
